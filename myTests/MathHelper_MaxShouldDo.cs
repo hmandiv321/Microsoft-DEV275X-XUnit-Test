@@ -14,14 +14,18 @@ namespace myTests
             _mathHelper = new MathHelper();
         }
 
-        [Fact]
-        public void Return0GivenValuesof0()
+        [Theory]
+        [InlineData(89,89,89)]
+        [InlineData(-999, -999, -999)]
+        [InlineData(270, 270, 270)]
+        [InlineData(1002, 1002, 1002)]
+        public void ReturnValueWhenOperandsValuesAreSame(int value1, int value2, int expectedResult)
         {
             //Act
-            var result = _mathHelper.Max(0, 0);
+            var result = _mathHelper.Max(value1, value2);
 
             //Assert
-            Assert.Equal(0, result);
+            Assert.Equal(expectedResult, result);
         }
     }
 }

@@ -6,10 +6,12 @@ namespace myLib
     {
         public int Max(int numberOne, int numberTwo)
         {
-            //write just enough code to make the test pass
-            if(numberOne == 0 && numberTwo == 0)
+            /*since this is TDD, now that our implementation of the test fails
+             * now we will fix this max implementation, to make the test pass
+             */
+            if(numberOne ==  numberTwo)
             {
-                return 0;
+                return numberOne;
             }
             throw new NotImplementedException("Write tests!");
         }
